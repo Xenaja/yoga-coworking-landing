@@ -19,26 +19,13 @@ export function readContent() {
   }
 }
 
-/** Кнопки «Написать в ВК»: адрес берётся из #content, в разметке он же — фолбэк для no-JS. */
-function syncVkLinks(content) {
-  if (!content.vk_message) return;
-  document.querySelectorAll('a[data-cta]').forEach((a) => { a.href = content.vk_message; });
-}
-
-/** Telegram (PENDING-10): пока null — на странице только ВК.
- *  Появится ссылка — рядом с каждой кнопкой ВК встанет вторая, вторичная. */
-function addTelegramButtons(content) {
-  if (!content.telegram) return;
+/** Кнопки мессенджеров: адреса берутся из #content.
+ *  В разметке стоят те же адреса — они работают и без JS. */
+function syncMessengerLinks(content) {
+  const map = { vk: content.vk_message, tg: content.telegram };
   document.querySelectorAll('a[data-cta]').forEach((a) => {
-    if (a.classList.contains('link')) return;          // текстовые ссылки не дублируем
-    const tg = a.cloneNode(false);
-    tg.href = content.telegram;
-    tg.textContent = 'Написать в Telegram';
-    tg.removeAttribute('data-cta');
-    tg.className = a.className
-      .replace('btn--primary', 'btn--secondary')
-      .replace('btn--ondark', 'btn--onbrand');
-    a.insertAdjacentElement('afterend', tg);
+    const href = map[a.dataset.cta];
+    if (href) a.href = href;
   });
 }
 
@@ -64,8 +51,7 @@ function fillLegal(content) {
 }
 
 export function applyContent(content) {
-  syncVkLinks(content);
-  addTelegramButtons(content);
+  syncMessengerLinks(content);
   linkMosRu(content);
   fillLegal(content);
 }

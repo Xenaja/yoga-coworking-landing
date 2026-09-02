@@ -54,11 +54,18 @@
 .btn--primary{background:var(--brand);color:#fff}
 .btn--primary:hover{background:var(--brand-press)}
 .btn--secondary{background:transparent;color:var(--brand-press);border-color:var(--line)}
-.btn--secondary:hover{border-color:var(--brand)}
+.btn--secondary:hover{border-color:var(--brand);background:rgba(126,74,151,.06)}
 .btn--onbrand{background:#fff;color:var(--brand-deep)}
-.btn--onbrand:hover{background:#E9E3F5}
+.btn--onbrand:hover{background:var(--brand-tint)}
 .btn--ondark{background:var(--brand);color:#fff}
-.btn--ondark:hover{background:#8E71C9}
+.btn--ondark:hover{background:var(--brand-hover)}
+/* вторичная кнопка на заливке — обводка по белому */
+.section--dark .btn--secondary,.section--brand .btn--secondary{
+  color:#fff;border-color:rgba(255,255,255,.45);
+}
+.section--dark .btn--secondary:hover,.section--brand .btn--secondary:hover{
+  border-color:#fff;background:rgba(255,255,255,.10);
+}
 .btn:active{transform:translateY(1px)}
 .btn--wide{width:100%}
 @media (min-width:640px){ .btn--wide{width:auto} }
@@ -212,7 +219,8 @@ body[data-menu-open]{overflow:hidden}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .sticky{background:var(--paper)}
 }
-.sticky .btn{flex:1}
+.sticky .btn--primary{flex:1}
+.sticky .btn--secondary{flex:none;padding:0 16px}
 @media (min-width:1024px){ .sticky{display:none} }
 
 /* ---------- Движение ----------
