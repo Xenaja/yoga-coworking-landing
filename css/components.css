@@ -1,0 +1,228 @@
+/* ============================================================
+   КОМПОНЕНТЫ — ритм секций, сигнатурный приём, кнопки,
+   карточки и сетки, шапка и меню, кадры, закреплённое действие.
+   ============================================================ */
+
+/* ---------- Ритм секций A / B / C ----------
+   A — полноширинный визуал, B — карточная сетка, C — акцентная заливка.
+   Соседние типы не совпадают: A B A C B A B A C.               */
+.section{padding-block:var(--gap-section)}
+.section--dark{background:var(--ink);color:var(--on-dark);padding-block:var(--gap-section-lg)}
+.section--brand{background:var(--brand-deep);color:var(--on-dark);padding-block:var(--gap-section-lg)}
+.section--dark p{color:var(--on-dark-2);max-width:56ch}
+.section--brand p{color:var(--on-brand-2);max-width:56ch}
+.section--dark h2,.section--dark h3,
+.section--brand h2,.section--brand h3{color:#fff}
+.section--dark .note,.section--dark .note-after{color:var(--on-dark-2)}
+.section--brand .note,.section--brand .note-after{color:var(--on-brand-2)}
+
+/* ---------- Сигнатурный приём: библиотечный шифр ----------
+   Моно-ярлык в тонкой рамке. Повторяется в лейблах секций,
+   номерах залов и номерах шагов — и больше нигде.              */
+.code{
+  display:inline-block;padding:6px 7px;
+  border:1px solid var(--line);border-radius:4px;
+  font:500 var(--fs-label)/1 var(--font-mono);
+  letter-spacing:.06em;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.rail{
+  display:flex;align-items:center;gap:14px;
+  padding-bottom:14px;border-bottom:1px solid var(--line);
+  margin-bottom:clamp(28px,4vw,44px);
+}
+.rail__name{
+  font:500 var(--fs-label)/1 var(--font-mono);
+  text-transform:uppercase;letter-spacing:.16em;color:var(--ink-2);
+}
+.section--dark .rail,.section--brand .rail{border-bottom-color:var(--on-dark-line)}
+.section--dark .code,.section--dark .rail__name{color:var(--on-dark-2)}
+.section--brand .code,.section--brand .rail__name{color:var(--on-brand-2)}
+.section--dark .code,.section--brand .code{border-color:var(--on-dark-line)}
+
+/* ---------- Кнопки и ссылки ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:48px;padding:0 22px;
+  border:1px solid transparent;border-radius:10px;
+  font:600 var(--fs-body)/1 var(--font-body);
+  text-decoration:none;cursor:pointer;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  transition:background 140ms ease,border-color 140ms ease,color 140ms ease,transform 80ms ease;
+}
+@media (min-width:640px){ .btn{min-height:52px;padding:0 26px} }
+.btn--primary{background:var(--brand);color:#fff}
+.btn--primary:hover{background:var(--brand-press)}
+.btn--secondary{background:transparent;color:var(--brand-press);border-color:var(--line)}
+.btn--secondary:hover{border-color:var(--brand)}
+.btn--onbrand{background:#fff;color:var(--brand-deep)}
+.btn--onbrand:hover{background:#E9E3F5}
+.btn--ondark{background:var(--brand);color:#fff}
+.btn--ondark:hover{background:#8E71C9}
+.btn:active{transform:translateY(1px)}
+.btn--wide{width:100%}
+@media (min-width:640px){ .btn--wide{width:auto} }
+
+.link{color:var(--brand-press);text-underline-offset:3px;text-decoration-thickness:1px}
+.link:hover{color:var(--ink)}
+.section--dark .link,.section--brand .link{color:#fff}
+.section--dark .link:hover,.section--brand .link:hover{color:var(--on-dark-2)}
+
+.actions{
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
+  margin-top:clamp(26px,3.5vw,36px);
+}
+@media (min-width:640px){
+  .actions{flex-direction:row;align-items:center;gap:24px;flex-wrap:wrap}
+}
+
+/* ---------- Сетки и карточки ---------- */
+.grid{display:grid;gap:16px}
+@media (min-width:640px){
+  .grid{gap:20px}
+  .grid--2,.grid--3,.grid--5{grid-template-columns:repeat(2,1fr)}
+  .grid--5>li:last-child{grid-column:span 2}
+}
+@media (min-width:1024px){
+  .grid--3{grid-template-columns:repeat(3,1fr)}
+  /* пять карточек без пустой полуколонки: 3 + 2 */
+  .grid--5{grid-template-columns:repeat(6,1fr)}
+  .grid--5>li{grid-column:span 2}
+  .grid--5>li:nth-child(4),.grid--5>li:nth-child(5){grid-column:span 3}
+}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(22px,3vw,30px);
+}
+.card>.code{margin-bottom:18px}
+.card h3{margin-bottom:10px}
+.card p{color:var(--ink-2);max-width:46ch}
+.section--brand .card{background:rgba(255,255,255,.07);border-color:var(--on-dark-line)}
+
+.lead{
+  margin-top:clamp(14px,1.6vw,20px);
+  margin-bottom:clamp(28px,4vw,40px);
+  font-size:var(--fs-lead);line-height:1.6;color:var(--ink-2);max-width:70ch;
+}
+
+/* ---------- Кадры ---------- */
+.frame{
+  aspect-ratio:4/3;border-radius:var(--radius);
+  overflow:hidden;background:var(--surface-2);
+}
+.frame img{width:100%;height:100%;object-fit:cover}
+figcaption{margin-top:14px;max-width:62ch;font-size:var(--fs-small);color:var(--ink-2)}
+
+/* ---------- Шапка ---------- */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background 160ms ease,border-color 160ms ease;
+}
+.header[data-scrolled]{
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom-color:var(--line);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .header[data-scrolled]{background:var(--paper)}
+}
+.header__in{
+  width:var(--container);margin-inline:auto;height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{
+  display:inline-flex;align-items:center;gap:10px;
+  text-decoration:none;-webkit-tap-highlight-color:transparent;
+}
+.brand__sign{width:auto;height:36px}
+@media (min-width:1024px){ .brand__sign{height:42px} }
+.brand__name{display:inline-flex;align-items:baseline;gap:8px}
+.brand__mark{font:400 21px/1 var(--font-display);color:var(--brand-press)}
+.brand__word{
+  font:500 10px/1 var(--font-mono);text-transform:uppercase;
+  letter-spacing:.17em;color:var(--ink-2);
+}
+@media (min-width:640px){
+  .brand__mark{font-size:23px}
+  .brand__word{font-size:11px}
+}
+
+.burger{
+  display:grid;place-items:center;width:44px;height:44px;margin-right:-10px;
+  border:0;background:transparent;cursor:pointer;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.burger i{
+  display:block;width:22px;height:1.5px;background:var(--ink);
+  position:relative;transition:background 160ms ease;
+}
+.burger i::before,.burger i::after{
+  content:"";position:absolute;left:0;width:22px;height:1.5px;
+  background:var(--ink);transition:transform 180ms ease;
+}
+.burger i::before{top:-7px}
+.burger i::after{top:7px}
+.burger[aria-expanded="true"] i{background:transparent}
+.burger[aria-expanded="true"] i::before{transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] i::after{transform:translateY(-7px) rotate(-45deg)}
+
+.nav{
+  position:fixed;inset:var(--header-h) 0 0;z-index:99;
+  padding:16px clamp(20px,5vw,40px) 40px;
+  display:flex;flex-direction:column;overflow-y:auto;
+  background:var(--paper);
+  opacity:0;transform:translateY(-8px);pointer-events:none;
+  transition:opacity 160ms ease-out,transform 160ms ease-out;
+}
+.nav[data-open="true"]{opacity:1;transform:none;pointer-events:auto}
+.nav a:not(.btn){
+  display:block;padding:16px 0;border-bottom:1px solid var(--line-2);
+  font:400 var(--fs-h3)/1.2 var(--font-display);text-decoration:none;
+}
+.nav .btn{margin-top:24px}
+body[data-menu-open]{overflow:hidden}
+
+@media (min-width:1024px){
+  .burger{display:none}
+  .nav{
+    position:static;inset:auto;flex-direction:row;align-items:center;gap:30px;
+    padding:0;background:none;overflow:visible;
+    opacity:1;transform:none;pointer-events:auto;
+  }
+  .nav a:not(.btn){
+    padding:0;border:0;text-decoration:none;
+    font:400 var(--fs-small)/1 var(--font-body);
+    transition:color 140ms ease;
+  }
+  .nav a:not(.btn):hover{color:var(--brand-press)}
+  .nav .btn{margin-top:0;min-height:44px;padding:0 18px;font-size:var(--fs-small)}
+}
+
+/* ---------- Закреплённое действие на мобиле ---------- */
+.sticky{
+  position:fixed;inset:auto 0 0 0;z-index:90;
+  display:flex;gap:12px;align-items:center;
+  padding:10px clamp(20px,5vw,40px) calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .sticky{background:var(--paper)}
+}
+.sticky .btn{flex:1}
+@media (min-width:1024px){ .sticky{display:none} }
+
+/* ---------- Движение ----------
+   Одна сигнатурная анимация: лента залов проявляется при подходе.
+   Без JS и при prefers-reduced-motion контент виден сразу.       */
+.reveal{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  html.js .reveal{
+    opacity:0;transform:translateY(14px);
+    transition:opacity 220ms ease-out,transform 220ms ease-out;
+  }
+  html.js .reveal.is-in{opacity:1;transform:none}
+}

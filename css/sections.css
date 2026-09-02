@@ -1,0 +1,142 @@
+/* ============================================================
+   СЕКЦИИ — hero, аудитории, залы, шаги, вопросы, контакты.
+   ============================================================ */
+
+/* ---------- 1. Hero ---------- */
+.hero{padding-top:clamp(24px,4.5vw,52px);padding-bottom:var(--gap-section)}
+.hero h1{max-width:16ch}
+.hero__lead{
+  margin-top:clamp(20px,3vw,28px);max-width:52ch;
+  font-size:var(--fs-lead);line-height:1.55;color:var(--ink-2);
+}
+.hero__risk{margin-top:14px;font-size:var(--fs-small);color:var(--ink-2)}
+
+/* Числа стоят под кадром: иначе главный визуал уезжал за сгиб на 1440×900.
+   Доказательство до сгиба несёт лейбл «7 ЗАЛОВ» в шифре над заголовком. */
+.stats{margin-top:clamp(30px,3.5vw,40px);border-top:1px solid var(--line);display:grid}
+.stats li{
+  display:flex;align-items:baseline;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--line);
+}
+.stats b{
+  font:400 clamp(30px,3.2vw,38px)/1 var(--font-display);
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+.stats span{font-size:var(--fs-small);color:var(--ink-2)}
+@media (min-width:640px){
+  .stats{grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+  .stats li{display:block;padding:22px 28px 22px 0;border-bottom:0}
+  .stats b{display:block;margin-bottom:6px}
+}
+
+.figure{margin:clamp(32px,4vw,44px) 0 0}
+@media (min-width:640px){ .figure .frame{aspect-ratio:16/9} }
+@media (min-width:1024px){ .figure .frame{aspect-ratio:21/9} }
+
+/* ---------- 3. Ученикам: текст + кадр ---------- */
+.split{display:grid;gap:clamp(28px,4vw,44px)}
+@media (min-width:1024px){
+  .split{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:clamp(40px,5vw,72px);align-items:start;
+  }
+  .split .frame{aspect-ratio:4/3;position:sticky;top:calc(var(--header-h) + 32px)}
+}
+
+/* ---------- Список по линейкам (3 и 4 секции) ---------- */
+.lines{margin-top:clamp(24px,3vw,32px);border-top:1px solid var(--line)}
+.lines li{padding:18px 0;border-bottom:1px solid var(--line)}
+.lines b{display:block;margin-bottom:5px}
+.lines p{font-size:var(--fs-small);color:var(--ink-2);max-width:52ch}
+.section--brand .lines,.section--dark .lines{border-top-color:var(--on-dark-line)}
+.section--brand .lines li,.section--dark .lines li{border-bottom-color:var(--on-dark-line)}
+.section--brand .lines b,.section--dark .lines b{color:#fff}
+/* без этих строк .lines p перебивает .section--brand p — равная специфичность,
+   а sections.css грузится позже: текст уходил в графит на лиловом */
+.section--brand .lines p{color:var(--on-brand-2)}
+.section--dark .lines p{color:var(--on-dark-2)}
+
+/* ---------- 6. Залы: лента кадров + каталог адресов ---------- */
+.strip{
+  display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:clamp(20px,5vw,40px);
+  margin-inline:calc(-1 * clamp(20px,5vw,40px));
+  padding-inline:clamp(20px,5vw,40px);
+}
+.strip::-webkit-scrollbar{display:none}
+.strip>li{flex:0 0 84%;scroll-snap-align:start}
+.strip .frame{aspect-ratio:3/2}
+@media (min-width:640px){
+  .strip{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+    overflow:visible;margin-inline:0;padding-inline:0;
+  }
+  .strip>li{flex:none}
+}
+@media (min-width:1024px){ .strip{grid-template-columns:repeat(3,1fr)} }
+
+.halls{margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--line)}
+.hall{
+  display:grid;grid-template-columns:auto minmax(0,1fr);
+  column-gap:14px;row-gap:4px;
+  padding:18px 0;border-bottom:1px solid var(--line);
+}
+.hall__code{grid-column:1;grid-row:1 / span 3;align-self:start}
+.hall__name{grid-column:2;font-weight:600}
+.hall__place,.hall__addr{grid-column:2;font-size:var(--fs-small);color:var(--ink-2)}
+@media (min-width:1024px){
+  .hall{
+    grid-template-columns:auto minmax(0,1.15fr) minmax(0,1fr) minmax(0,1.1fr);
+    column-gap:28px;align-items:baseline;
+  }
+  .hall__code{grid-row:1}
+  .hall__name,.hall__place,.hall__addr{grid-column:auto}
+}
+
+/* ---------- 7. Как начать: шаги внутри карточек ---------- */
+.steps{margin-top:20px}
+.steps li{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--line-2);
+}
+.steps li:last-child{border-bottom:0;padding-bottom:0}
+.steps p{font-size:var(--fs-small);color:var(--ink-2)}
+
+/* ---------- 8. Вопросы ---------- */
+.faq{margin-top:clamp(28px,4vw,44px);border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
+  min-height:44px;padding:20px 0;list-style:none;cursor:pointer;
+  font:700 var(--fs-h3)/1.35 var(--font-display);
+  transition:color 140ms ease;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;font:400 26px/1 var(--font-body);color:var(--ink-3)}
+.faq details[open] summary::after{content:"\2013"}
+.faq summary:hover{color:var(--brand-press)}
+.faq details>p{padding-bottom:24px;color:var(--ink-2)}
+
+/* ---------- 9. Контакты и футер ---------- */
+.contacts__grid{display:grid;gap:32px}
+@media (min-width:1024px){
+  .contacts__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px}
+}
+.contacts__aside h3{margin-bottom:12px}
+
+.footer{
+  margin-top:clamp(44px,6vw,68px);padding-top:28px;
+  border-top:1px solid var(--on-dark-line);
+  display:grid;gap:20px;font-size:var(--fs-small);color:var(--on-dark-2);
+}
+@media (min-width:640px){
+  .footer{grid-template-columns:auto minmax(0,1fr);gap:32px;align-items:end}
+}
+/* знак лиловый по прозрачному фону — на графите не читается,
+   поэтому лежит на бумажной плашке */
+.footer__logo{
+  width:88px;height:88px;padding:8px;border-radius:12px;
+  background:var(--paper);object-fit:contain;
+}
+.footer__legal{display:grid;gap:8px;max-width:62ch;overflow-wrap:anywhere}

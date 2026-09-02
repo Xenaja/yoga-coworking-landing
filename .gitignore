@@ -1,0 +1,14 @@
+# системный мусор
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# локальные настройки Claude Code
+.claude/settings.local.json
+
+# временные файлы предпросмотра
+_preview.html
+_w.html
+
+# исходники от заказчицы: остаются локально, в публичный репозиторий не идут
+visual/

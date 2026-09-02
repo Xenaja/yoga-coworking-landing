@@ -1,0 +1,73 @@
+/* ============================================================
+   БАЗА — сброс, типографика, утилиты, доступность,
+   dev-маркировка недостающих данных.
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-padding-top:calc(var(--header-h) + 16px);
+  scroll-behavior:smooth;
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+
+body{
+  margin:0;
+  padding-bottom:88px;            /* место под закреплённое действие на мобиле */
+  background:var(--paper);
+  color:var(--ink);
+  font:400 var(--fs-body)/1.65 var(--font-body);
+  -webkit-font-smoothing:antialiased;
+}
+@media (min-width:1024px){ body{padding-bottom:0} }
+
+img{display:block;max-width:100%}
+a{color:inherit}
+ul,ol{margin:0;padding:0;list-style:none}
+strong,b{font-weight:600}
+
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:700;text-wrap:balance}
+h1{font-size:var(--fs-display);line-height:1.04;letter-spacing:-.025em}
+h2{font-size:var(--fs-h2);line-height:1.14;letter-spacing:-.015em}
+h3{font-size:var(--fs-h3);line-height:1.28}
+p{margin:0;max-width:62ch;text-wrap:pretty}
+
+/* ---------- Утилиты ---------- */
+.container{width:var(--container);margin-inline:auto}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.note{font-size:var(--fs-small);color:var(--ink-2)}
+.note-after{margin-top:24px;font-size:var(--fs-small);color:var(--ink-2)}
+
+/* ---------- Доступность ---------- */
+:where(a,button,summary,input,[tabindex]):focus-visible{
+  outline:2px solid var(--brand-press);
+  outline-offset:3px;
+  border-radius:6px;
+}
+.section--dark :focus-visible,
+.section--brand :focus-visible{outline-color:#fff}
+
+.skip{
+  position:fixed;left:16px;top:-100px;z-index:200;
+  padding:12px 18px;border-radius:8px;
+  background:var(--ink);color:#fff;text-decoration:none;
+  transition:top 140ms ease;
+}
+.skip:focus-visible{top:16px}
+
+section[id],footer[id]{scroll-margin-top:calc(var(--header-h) + 16px)}
+
+/* ---------- DEV: маркировка недостающих данных ----------
+   Работает только при <html data-env="dev">. Перед публикацией
+   атрибут снимается, это проверяет gate.sh.                     */
+html[data-env="dev"] [data-pending]{
+  outline:2px dashed #B4442F;outline-offset:3px;position:relative;
+}
+html[data-env="dev"] [data-pending]::after{
+  content:"ЖДЁМ: " attr(data-pending);
+  position:absolute;left:0;top:-20px;z-index:50;
+  padding:3px 6px;border-radius:4px;
+  font:500 11px/1 var(--font-mono);color:#fff;background:#B4442F;
+  white-space:nowrap;
+}
