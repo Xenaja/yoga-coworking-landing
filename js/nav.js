@@ -1,18 +1,8 @@
 /* ============================================================
-   Шапка и мобильное меню.
+   Мобильное меню. Шапка в этой редакции дизайна полупрозрачная
+   и с блюром с самого начала (не переключается по скроллу) —
+   отдельная инициализация под это не нужна.
    ============================================================ */
-
-/** Фон шапки появляется после первого скролла. Высота шапки не меняется — CLS = 0. */
-export function initHeader() {
-  const header = document.querySelector('.header');
-  if (!header) {
-    console.error('[nav] Шапка .header не найдена.');
-    return;
-  }
-  const onScroll = () => header.toggleAttribute('data-scrolled', window.scrollY > 24);
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
 
 /** Полноэкранное меню: aria-expanded, блокировка скролла, Esc, закрытие по ссылке. */
 export function initMenu() {

@@ -4,8 +4,9 @@
    ============================================================ */
 
 import { readContent, applyContent } from './content.js';
-import { initHeader, initMenu } from './nav.js';
+import { initMenu } from './nav.js';
 import { initReveal } from './reveal.js';
+import { initFaq } from './faq.js';
 
 try {
   applyContent(readContent());
@@ -14,14 +15,19 @@ try {
 }
 
 try {
-  initHeader();
   initMenu();
 } catch (err) {
-  console.error('[main] Инициализация шапки и меню упала:', err);
+  console.error('[main] Инициализация меню упала:', err);
 }
 
 try {
   initReveal();
 } catch (err) {
   console.error('[main] Инициализация анимаций упала:', err);
+}
+
+try {
+  initFaq();
+} catch (err) {
+  console.error('[main] Инициализация FAQ упала:', err);
 }

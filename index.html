@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="./photos/hero/hero.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Onest:wght@400;500;600&family=PT+Serif:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Golos+Text:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="./css/tokens.css">
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/components.css">
@@ -163,10 +163,10 @@
 <a class="skip" href="#main">К содержимому</a>
 
 <header class="header">
-  <div class="header__in">
+  <div class="header__in container">
     <a class="brand" href="#top" aria-label="Йога Коворкинг, наверх страницы">
-      <img class="brand__sign" src="./photos/logo.png" width="402" height="462" alt="" decoding="async">
-      <span class="brand__name"><span class="brand__mark">Йога</span><span class="brand__word">коворкинг</span></span>
+      <img class="brand__sign" src="./photos/logo.png" width="464" height="464" alt="" decoding="async">
+      <span class="brand__name">Йога<b>&#8239;коворкинг</b></span>
     </a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню"><i></i></button>
     <nav class="nav" id="nav" data-open="false" aria-label="Разделы страницы">
@@ -181,60 +181,74 @@
 
 <main id="main">
 
-  <!-- 1. HERO — ритм A -->
-  <section class="hero container" data-type="A" aria-labelledby="hero-title">
-    <div class="rail">
-      <span class="code">7 ЗАЛОВ</span>
-      <span class="rail__name">Чертаново · Братеево · Зябликово · Садовники</span>
+  <!-- 1. HERO — ритм A, фулл-блид кадр -->
+  <section class="hero" data-type="A" aria-labelledby="hero-title">
+    <div class="hero__frame">
+      <picture>
+        <source srcset="./photos/hero/hero-800.webp 800w, ./photos/hero/hero.webp 1440w" type="image/webp" sizes="100vw">
+        <img src="./photos/hero/hero.jpg" srcset="./photos/hero/hero-800.jpg 800w, ./photos/hero/hero.jpg 1440w" sizes="100vw"
+             width="1440" height="845" fetchpriority="high" decoding="async"
+             alt="Женщина лежит в шавасане на коврике посреди светлого зала; вдоль стен ряды стульев, за окнами зелень">
+      </picture>
     </div>
-    <h1 id="hero-title">Йога-коворкинг в вашем районе</h1>
-    <p class="hero__lead">Просторные залы на базе библиотек юга Москвы — для тех, кто практикует,
-      и для тех, кто преподаёт. Йога должна быть доступна.</p>
-    <div class="actions">
-      <a class="btn btn--primary btn--wide" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
-      <a class="btn btn--secondary btn--wide" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
-      <span class="note" data-mosru>Расписание занятий и запись — в сервисе mos.ru</span>
-    </div>
-    <p class="hero__risk">Коврики и инвентарь — в зале: приходить можно налегке.</p>
-    <figure class="figure">
-      <div class="frame">
-        <picture>
-          <source srcset="./photos/hero/hero.webp" type="image/webp">
-          <img src="./photos/hero/hero.jpg" width="1200" height="720" fetchpriority="high" decoding="async"
-               alt="Женщина лежит в шавасане на коврике посреди светлого зала; вдоль стен ряды стульев, за окнами зелень">
-        </picture>
+    <div class="hero__veil hero__veil--1"></div>
+    <div class="hero__veil hero__veil--2"></div>
+    <div class="hero__in container">
+      <div class="hero__badge">
+        <b>7 залов</b><i></i><span>Чертаново · Братеево · Зябликово · Садовники</span>
       </div>
-      <figcaption>Так выглядит зал: тихо, просторно, без суеты фитнес-клуба.</figcaption>
-    </figure>
+      <h1 id="hero-title"><span class="nowrap">Йога-коворкинг</span><br><em>в вашем районе</em></h1>
+      <div class="hero__row">
+        <div class="hero__lead-col">
+          <p>Просторные залы на базе библиотек юга Москвы — для тех, кто практикует,
+            и для тех, кто преподаёт. Йога должна быть доступна.</p>
+          <div class="actions">
+            <a class="btn btn--onbrand" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
+            <a class="btn btn--secondary" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
+          </div>
+          <p class="hero__mos" data-mosru>Расписание занятий и запись — в сервисе mos.ru</p>
+        </div>
+        <div class="hero__aside">
+          <p>Так выглядит зал: тихо, просторно, без суеты фитнес-клуба.</p>
+          <p>Коврики и инвентарь — в зале</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1b. Полоса цифр, светлый фон сразу под hero -->
+  <div class="container">
     <ul class="stats">
       <li><b>7</b><span>залов на юге Москвы</span></li>
       <li><b>6</b><span>районов: Чертаново, Братеево, Зябликово, Садовники</span></li>
-      <li><b>0 ₽</b><span>аренды и инвентаря для инструктора</span></li>
+      <li><b>0 ₽</b><span>оплата за аренду и инвентарь для инструктора</span></li>
     </ul>
-  </section>
+  </div>
 
   <!-- 2. ЧТО ЭТО — ритм B -->
   <section class="section" id="about" data-type="B" aria-labelledby="about-title">
     <div class="container">
-      <div class="rail"><span class="code">01 / 08</span><span class="rail__name">Что это</span></div>
-      <h2 id="about-title">Пространство для практики — в паре шагов от дома</h2>
-      <p class="lead" data-mosru>Йога Коворкинг — сеть доступных йога-залов на базе городских библиотек
-        юга Москвы: Чертаново, Братеево, Зябликово и Садовники. Ученики занимаются рядом с домом
-        по доступным ценам и записываются онлайн через сервис mos.ru, инструкторы ведут группы
-        в оборудованных залах без затрат на аренду.</p>
-      <ul class="grid grid--3">
+      <div class="rail"><span class="rail__num">01 / 08</span><span class="rail__line"></span><span class="rail__name">Что это</span></div>
+      <div class="section-head">
+        <h2 id="about-title">Пространство для практики — в паре шагов от дома</h2>
+        <p class="lead" data-mosru>Йога Коворкинг — сеть доступных йога-залов на базе городских библиотек
+          юга Москвы: Чертаново, Братеево, Зябликово и Садовники. Ученики занимаются рядом с домом
+          по доступным ценам и записываются онлайн через сервис mos.ru, инструкторы ведут группы
+          в оборудованных залах без затрат на аренду.</p>
+      </div>
+      <ul class="grid">
         <li class="card">
-          <span class="code">БИБЛИОТЕКИ</span>
+          <span class="eyebrow">Библиотеки</span>
           <h3>Залы в библиотеках</h3>
           <p>Тёплые, просторные и тихие залы культурных центров — без суеты фитнес-клубов.</p>
         </li>
         <li class="card">
-          <span class="code">ЮГ МОСКВЫ</span>
+          <span class="eyebrow">Юг Москвы</span>
           <h3>Семь площадок рядом</h3>
           <p>Чертаново, Братеево, Зябликово, Садовники. Список залов растёт.</p>
         </li>
         <li class="card">
-          <span class="code">ДОСТУПНО</span>
+          <span class="eyebrow">Доступно</span>
           <h3>Честная стоимость</h3>
           <p>Доступные цены для учеников и работа без аренды для инструкторов.</p>
         </li>
@@ -245,23 +259,23 @@
   <!-- 3. УЧЕНИКАМ — ритм A -->
   <section class="section" id="students" data-type="A" aria-labelledby="students-title">
     <div class="container">
-      <div class="rail"><span class="code">02 / 08</span><span class="rail__name">Ученикам</span></div>
-      <div class="split">
+      <div class="rail"><span class="rail__num">02 / 08</span><span class="rail__line"></span><span class="rail__name">Ученикам</span></div>
+      <div class="split-students">
         <div>
-          <h2 id="students-title">Если вы занимаетесь йогой</h2>
-          <ul class="lines">
-            <li><b>Зал рядом с домом</b><p>С ковриками и инвентарём — приходить можно налегке.</p></li>
-            <li><b>Профессиональные инструкторы</b><p>Преподаватели с профильным образованием и именными сертификатами.</p></li>
-            <li><b>Доступные цены</b><p>Формат коворкинга позволяет держать стоимость ниже студийной.</p></li>
-            <li><b>Удобная запись онлайн</b><p data-mosru>Расписание и запись — через городской сервис mos.ru.</p></li>
-          </ul>
+          <h2 id="students-title">Если вы <em class="accent-em">занимаетесь</em> йогой</h2>
+          <ol class="numlist">
+            <li><span class="numlist__num">01</span><div><h3>Зал рядом с домом</h3><p>С ковриками и инвентарём — приходить можно налегке.</p></div></li>
+            <li><span class="numlist__num">02</span><div><h3>Профессиональные инструкторы</h3><p>Преподаватели с профильным образованием и именными сертификатами.</p></div></li>
+            <li><span class="numlist__num">03</span><div><h3>Доступные цены</h3><p>Формат коворкинга позволяет держать стоимость ниже студийной.</p></div></li>
+            <li><span class="numlist__num">04</span><div><h3>Удобная запись онлайн</h3><p data-mosru>Расписание и запись — через городской сервис mos.ru.</p></div></li>
+          </ol>
           <div class="actions">
-            <a class="btn btn--primary btn--wide" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
-            <a class="btn btn--secondary btn--wide" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
+            <a class="btn btn--primary" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
+            <a class="btn btn--secondary" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
             <span class="note">Поможем выбрать зал и занятие по уровню.</span>
           </div>
         </div>
-        <div class="frame">
+        <div class="sticky-photo">
           <picture>
             <source srcset="./photos/practice/practice.webp" type="image/webp">
             <img src="./photos/practice/practice.jpg" width="1000" height="750" loading="lazy" decoding="async"
@@ -272,25 +286,26 @@
     </div>
   </section>
 
-  <!-- 4. ИНСТРУКТОРАМ — ритм C, единственный брендовый блок -->
-  <section class="section section--brand" id="teachers" data-type="C" aria-labelledby="teachers-title">
+  <!-- 4. ИНСТРУКТОРАМ — ритм C, единственный тёмный блок -->
+  <section class="section section--dark" id="teachers" data-type="C" aria-labelledby="teachers-title">
     <div class="container">
-      <div class="rail"><span class="code">03 / 08</span><span class="rail__name">Инструкторам</span></div>
-      <h2 id="teachers-title">Если вы преподаёте</h2>
-      <p class="lead">Аренда съедает доход, а группу приходится собирать своими силами.
-        В коворкинге зал, инвентарь и организация — на нас.</p>
-      <ul class="lines">
-        <li><b>Оборудованный зал без аренды</b><p>Не нужно вкладываться в помещение и инвентарь.</p></li>
-        <li><b>Гибкий график</b><p>Выбирайте удобные локации и время, масштабируйте доход.</p></li>
-        <li><b>Администрирование на нас</b><p>Организационные вопросы берёт на себя команда.</p></li>
-        <li><b>Реклама и аудитория</b><p>Помогаем собирать группы из жителей района.</p></li>
-        <li><b>Официально и спокойно</b><p>Прозрачный формат работы для самозанятых.</p></li>
+      <div class="rail"><span class="rail__num">03 / 08</span><span class="rail__line"></span><span class="rail__name">Инструкторам</span></div>
+      <div class="section-head">
+        <h2 id="teachers-title">Если вы <em class="accent-em">преподаёте</em></h2>
+        <p class="lead">Аренда съедает доход, а группу приходится собирать своими силами?
+          В коворкинге зал, инвентарь и организация — на нас.</p>
+      </div>
+      <ul class="flist">
+        <li><h3>Оборудованный зал без аренды</h3><p>Не нужно вкладываться в помещение и инвентарь.</p></li>
+        <li><h3>Гибкий график</h3><p>Выбирайте удобные локации и время, масштабируйте доход.</p></li>
+        <li><h3>Администрирование на нас</h3><p>Организационные вопросы берёт на себя команда.</p></li>
+        <li><h3>Реклама и аудитория</h3><p>Помогаем собирать группы из жителей района.</p></li>
+        <li><h3>Официально и спокойно</h3><p>Прозрачный формат работы для самозанятых.</p></li>
+        <li class="flist__quote"><p>Рядом — сообщество практикующих преподавателей: обмен опытом и профессиональный рост.</p></li>
       </ul>
-      <p class="note-after">Рядом — сообщество практикующих преподавателей:
-        обмен опытом и профессиональный рост.</p>
       <div class="actions">
-        <a class="btn btn--onbrand btn--wide" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
-        <a class="btn btn--secondary btn--wide" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ondark" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
+        <a class="btn btn--secondary" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
         <span class="note">Расскажем об условиях и свободных слотах в залах.</span>
       </div>
     </div>
@@ -299,85 +314,93 @@
   <!-- 5. ТРЕБОВАНИЯ — ритм B. Фильтр стоит выше FAQ: отсекает нецелевые отклики -->
   <section class="section" id="requirements" data-type="B" aria-labelledby="req-title">
     <div class="container">
-      <div class="rail"><span class="code">04 / 08</span><span class="rail__name">Требования</span></div>
-      <h2 id="req-title">Кого мы ждём в команде</h2>
-      <p class="lead">Мы отвечаем перед учениками за качество практики, поэтому у нас
-        несколько обязательных условий.</p>
-      <ul class="grid grid--5">
-        <li class="card"><span class="code">01</span><h3>Образование по йоге</h3><p>Профильное обучение по направлению, которое вы ведёте.</p></li>
-        <li class="card"><span class="code">02</span><h3>Именные сертификаты</h3><p>Документы, подтверждающие квалификацию.</p></li>
-        <li class="card"><span class="code">03</span><h3>Опыт работы с группами</h3><p>Вы уже вели групповые занятия, а не только индивидуальные.</p></li>
-        <li class="card"><span class="code">04</span><h3>Статус самозанятого</h3><p>Работаем официально — статус должен быть действующим.</p></li>
-        <li class="card"><span class="code">05</span><h3>Время и желание</h3><p>Свободные часы в расписании и готовность вести регулярно.</p></li>
+      <div class="rail"><span class="rail__num">04 / 08</span><span class="rail__line"></span><span class="rail__name">Требования</span></div>
+      <div class="section-head">
+        <h2 id="req-title">Кого мы ждём в команде</h2>
+        <p class="lead">Мы отвечаем перед учениками за качество практики, поэтому у нас
+          несколько обязательных условий.</p>
+      </div>
+      <ul class="grid">
+        <li class="tile"><span class="eyebrow">01</span><h3>Образование по йоге</h3><p>Профильное обучение по направлению, которое вы ведёте.</p></li>
+        <li class="tile"><span class="eyebrow">02</span><h3>Именные сертификаты</h3><p>Документы, подтверждающие квалификацию.</p></li>
+        <li class="tile"><span class="eyebrow">03</span><h3>Опыт работы с группами</h3><p>Вы уже вели групповые занятия, а не только индивидуальные.</p></li>
+        <li class="tile"><span class="eyebrow">04</span><h3>Статус самозанятого</h3><p>Работаем официально — статус должен быть действующим.</p></li>
+        <li class="tile"><span class="eyebrow">05</span><h3>Время и желание</h3><p>Свободные часы в расписании и готовность вести регулярно.</p></li>
+        <li class="tile tile--dashed">
+          <p>Подходит? Напишите нам
+            <a class="link" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">в ВК</a>
+            или <a class="link" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">в Telegram</a>
+            — расскажем о свободных слотах в залах.</p>
+        </li>
       </ul>
-      <p class="note-after">Подходит? Напишите нам
-        <a class="link" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">в ВК</a>
-        или <a class="link" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">в Telegram</a>
-        — расскажем о свободных слотах в залах.</p>
     </div>
   </section>
 
   <!-- 6. НАШИ ЗАЛЫ — ритм A -->
   <section class="section" id="halls" data-type="A" aria-labelledby="halls-title">
     <div class="container">
-      <div class="rail"><span class="code">05 / 08</span><span class="rail__name">Наши залы</span></div>
-      <h2 id="halls-title">Семь залов на юге Москвы</h2>
-      <p class="lead">Занятия проходят в залах городских библиотек и культурных центров:
-        просторно, тихо и в шаговой доступности от дома.</p>
-      <ul class="strip reveal">
-        <li><div class="frame"><picture><source srcset="./photos/halls/hall-01.webp" type="image/webp"><img src="./photos/halls/hall-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Зал с книжными стеллажами и рядами белых стульев, в центре свободное пространство"></picture></div></li>
-        <li><div class="frame"><picture><source srcset="./photos/halls/hall-02.webp" type="image/webp"><img src="./photos/halls/hall-02.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Просторный светлый зал библиотеки: стеллажи с книгами, кресло и свободный центр"></picture></div></li>
-        <li><div class="frame"><picture><source srcset="./photos/halls/hall-03.webp" type="image/webp"><img src="./photos/halls/hall-03.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Зал с деревянным реечным потолком, большими окнами и светлым полом"></picture></div></li>
-        <li><div class="frame"><picture><source srcset="./photos/halls/hall-04.webp" type="image/webp"><img src="./photos/halls/hall-04.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Светлый зал с панорамными окнами, картинами на стене и стульями вдоль стекла"></picture></div></li>
-        <li><div class="frame"><picture><source srcset="./photos/halls/hall-05.webp" type="image/webp"><img src="./photos/halls/hall-05.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Читальный зал: стеллажи с книгами, экран и стулья по периметру"></picture></div></li>
-        <li><div class="frame"><picture><source srcset="./photos/halls/hall-06.webp" type="image/webp"><img src="./photos/halls/hall-06.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Пустой зал с паркетным полом и рядом высоких окон под потолком"></picture></div></li>
+      <div class="rail"><span class="rail__num">05 / 08</span><span class="rail__line"></span><span class="rail__name">Наши залы</span></div>
+      <div class="section-head">
+        <h2 id="halls-title">Семь залов на юге Москвы</h2>
+        <p class="lead">Занятия проходят в залах городских библиотек и культурных центров:
+          просторно, тихо и в шаговой доступности от дома.</p>
+      </div>
+    </div>
+    <ul class="halls-strip reveal">
+      <li><div class="frame"><picture><source srcset="./photos/halls/hall-01.webp" type="image/webp"><img src="./photos/halls/hall-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Зал с книжными стеллажами и рядами белых стульев, в центре свободное пространство"></picture></div></li>
+      <li><div class="frame"><picture><source srcset="./photos/halls/hall-02.webp" type="image/webp"><img src="./photos/halls/hall-02.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Просторный светлый зал библиотеки: стеллажи с книгами, кресло и свободный центр"></picture></div></li>
+      <li><div class="frame"><picture><source srcset="./photos/halls/hall-03.webp" type="image/webp"><img src="./photos/halls/hall-03.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Зал с деревянным реечным потолком, большими окнами и светлым полом"></picture></div></li>
+      <li><div class="frame"><picture><source srcset="./photos/halls/hall-04.webp" type="image/webp"><img src="./photos/halls/hall-04.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Светлый зал с панорамными окнами, картинами на стене и стульями вдоль стекла"></picture></div></li>
+      <li><div class="frame"><picture><source srcset="./photos/halls/hall-05.webp" type="image/webp"><img src="./photos/halls/hall-05.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Читальный зал: стеллажи с книгами, экран и стулья по периметру"></picture></div></li>
+      <li><div class="frame"><picture><source srcset="./photos/halls/hall-06.webp" type="image/webp"><img src="./photos/halls/hall-06.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Пустой зал с паркетным полом и рядом высоких окон под потолком"></picture></div></li>
+    </ul>
+    <div class="container">
+      <p class="halls-caption">Кадры из залов сети: библиотеки и культурные центры юга Москвы.</p>
+      <ul class="catalog">
+        <li>
+          <span class="catalog__num">№ 143</span>
+          <span class="catalog__name">Детская библиотека № 143</span>
+          <span class="catalog__place">Южное Чертаново · м. Академия Янгеля</span>
+          <span class="catalog__addr">ул. Чертановская, 66к4</span>
+        </li>
+        <li>
+          <span class="catalog__num">№ 150</span>
+          <span class="catalog__name">Библиотека № 150</span>
+          <span class="catalog__place">Братеево · м. Борисово</span>
+          <span class="catalog__addr">ул. Борисовские Пруды, 10к5</span>
+        </li>
+        <li>
+          <span class="catalog__num">№ 151·1</span>
+          <span class="catalog__name">Библиотека № 151, площадка 1</span>
+          <span class="catalog__place">Северное Чертаново · м. Чертановская</span>
+          <span class="catalog__addr">мкр. Северное Чертаново, 2к207</span>
+        </li>
+        <li>
+          <span class="catalog__num">№ 151·2</span>
+          <span class="catalog__name">Библиотека № 151, площадка 2</span>
+          <span class="catalog__place">Северное Чертаново · м. Чертановская</span>
+          <span class="catalog__addr">ул. Чертановская, 27к2</span>
+        </li>
+        <li>
+          <span class="catalog__num">№ 155</span>
+          <span class="catalog__name">Библиотека № 155</span>
+          <span class="catalog__place">Зябликово · м. Зябликово</span>
+          <span class="catalog__addr">Гурьевский проезд, 15к2с2</span>
+        </li>
+        <li>
+          <span class="catalog__num">№ 158</span>
+          <span class="catalog__name">Детская библиотека № 158</span>
+          <span class="catalog__place">Центральное Чертаново · м. Пражская</span>
+          <span class="catalog__addr">ул. Дорожная, 20к1</span>
+        </li>
+        <li>
+          <span class="catalog__num">№ 159</span>
+          <span class="catalog__name">Библиотека № 159</span>
+          <span class="catalog__place">Садовники · м. Нагатинская</span>
+          <span class="catalog__addr">ул. Нагатинская, 11к1</span>
+        </li>
       </ul>
-      <p class="note-after">Кадры из залов сети: библиотеки и культурные центры юга Москвы.</p>
-      <ul class="halls">
-        <li class="hall">
-          <span class="code hall__code">№ 143</span>
-          <span class="hall__name">Детская библиотека № 143</span>
-          <span class="hall__place">Южное Чертаново · м. Академия Янгеля</span>
-          <span class="hall__addr">ул. Чертановская, 66к4</span>
-        </li>
-        <li class="hall">
-          <span class="code hall__code">№ 150</span>
-          <span class="hall__name">Библиотека № 150</span>
-          <span class="hall__place">Братеево · м. Борисово</span>
-          <span class="hall__addr">ул. Борисовские Пруды, 10к5</span>
-        </li>
-        <li class="hall">
-          <span class="code hall__code">№ 151·1</span>
-          <span class="hall__name">Библиотека № 151, площадка 1</span>
-          <span class="hall__place">Северное Чертаново · м. Чертановская</span>
-          <span class="hall__addr">мкр. Северное Чертаново, 2к207</span>
-        </li>
-        <li class="hall">
-          <span class="code hall__code">№ 151·2</span>
-          <span class="hall__name">Библиотека № 151, площадка 2</span>
-          <span class="hall__place">Северное Чертаново · м. Чертановская</span>
-          <span class="hall__addr">ул. Чертановская, 27к2</span>
-        </li>
-        <li class="hall">
-          <span class="code hall__code">№ 155</span>
-          <span class="hall__name">Библиотека № 155</span>
-          <span class="hall__place">Зябликово · м. Зябликово</span>
-          <span class="hall__addr">Гурьевский проезд, 15к2с2</span>
-        </li>
-        <li class="hall">
-          <span class="code hall__code">№ 158</span>
-          <span class="hall__name">Детская библиотека № 158</span>
-          <span class="hall__place">Центральное Чертаново · м. Пражская</span>
-          <span class="hall__addr">ул. Дорожная, 20к1</span>
-        </li>
-        <li class="hall">
-          <span class="code hall__code">№ 159</span>
-          <span class="hall__name">Библиотека № 159</span>
-          <span class="hall__place">Садовники · м. Нагатинская</span>
-          <span class="hall__addr">ул. Нагатинская, 11к1</span>
-        </li>
-      </ul>
-      <p class="note-after">Живёте в другом районе? Напишите нам — новые залы открываем там,
+      <p class="halls-note">Живёте в другом районе? Напишите нам — новые залы открываем там,
         где есть спрос.</p>
     </div>
   </section>
@@ -385,25 +408,25 @@
   <!-- 7. КАК НАЧАТЬ — ритм B -->
   <section class="section" id="start" data-type="B" aria-labelledby="start-title">
     <div class="container">
-      <div class="rail"><span class="code">06 / 08</span><span class="rail__name">Как начать</span></div>
+      <div class="rail"><span class="rail__num">06 / 08</span><span class="rail__line"></span><span class="rail__name">Как начать</span></div>
       <h2 id="start-title">С чего начать</h2>
-      <ul class="grid grid--2">
+      <ul class="grid grid--wide">
         <li class="card">
-          <span class="code">УЧЕНИКУ</span>
+          <span class="eyebrow">Ученику</span>
           <h3>Три шага до первого занятия</h3>
           <ol class="steps">
-            <li><span class="code">01</span><div><b>Выберите зал рядом с домом</b><p>Семь адресов на юге Москвы — список выше.</p></div></li>
-            <li><span class="code">02</span><div><b>Найдите занятие в расписании</b><p data-mosru>Расписание — в сервисе mos.ru. Или напишите нам, поможем выбрать.</p></div></li>
-            <li><span class="code">03</span><div><b>Запишитесь и приходите</b><p>Коврик уже ждёт — приходить можно налегке.</p></div></li>
+            <li><span class="steps__num">01</span><div><span class="steps__title">Выберите зал рядом с домом</span><p>Семь адресов на юге Москвы — список выше.</p></div></li>
+            <li><span class="steps__num">02</span><div><span class="steps__title">Найдите занятие в расписании</span><p data-mosru>Расписание — в сервисе mos.ru. Или напишите нам, поможем выбрать.</p></div></li>
+            <li><span class="steps__num">03</span><div><span class="steps__title">Запишитесь и приходите</span><p>Коврик уже ждёт — приходить можно налегке.</p></div></li>
           </ol>
         </li>
         <li class="card">
-          <span class="code">ИНСТРУКТОРУ</span>
+          <span class="eyebrow">Инструктору</span>
           <h3>Три шага до своей группы</h3>
           <ol class="steps">
-            <li><span class="code">01</span><div><b>Напишите в сообщения сообщества</b><p>Коротко о себе и о том, что преподаёте.</p></div></li>
-            <li><span class="code">02</span><div><b>Пришлите сертификаты</b><p>И расскажите об опыте работы с группами.</p></div></li>
-            <li><span class="code">03</span><div><b>Согласуйте зал и график</b><p>И ведите группы в оборудованном зале.</p></div></li>
+            <li><span class="steps__num">01</span><div><span class="steps__title">Напишите в сообщения сообщества</span><p>Коротко о себе и о том, что преподаёте.</p></div></li>
+            <li><span class="steps__num">02</span><div><span class="steps__title">Пришлите сертификаты</span><p>И расскажите об опыте работы с группами.</p></div></li>
+            <li><span class="steps__num">03</span><div><span class="steps__title">Согласуйте зал и график</span><p>И ведите группы в оборудованном зале.</p></div></li>
           </ol>
         </li>
       </ul>
@@ -413,78 +436,103 @@
   <!-- 8. ВОПРОСЫ — ритм A -->
   <section class="section" id="faq" data-type="A" aria-labelledby="faq-title">
     <div class="container">
-      <div class="rail"><span class="code">07 / 08</span><span class="rail__name">Вопросы</span></div>
+      <div class="rail"><span class="rail__num">07 / 08</span><span class="rail__line"></span><span class="rail__name">Вопросы</span></div>
       <h2 id="faq-title">Частые вопросы</h2>
-      <div class="faq">
-        <details name="faq">
-          <summary>Я никогда не занимался йогой — мне подойдёт?</summary>
-          <p>Да. В расписании есть занятия для начинающих, инструктор подскажет и поможет
-            с первых минут. Уровень группы указан в описании занятия.</p>
-        </details>
-        <details name="faq">
-          <summary>Нужен ли свой коврик?</summary>
-          <p>Нет, залы оборудованы инвентарём. Со своим ковриком тоже можно.</p>
-        </details>
-        <details name="faq">
-          <summary>Как записаться на занятие?</summary>
-          <p data-mosru>Расписание и запись — онлайн через городской сервис mos.ru: выбираете зал,
+      <ul class="faq">
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Я никогда не занимался йогой — мне подойдёт?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p>Да. В расписании есть занятия для начинающих, инструктор подскажет и поможет
+            с первых минут. Уровень группы указан в описании занятия.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Нужен ли свой коврик?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p>Нет, залы оборудованы инвентарём. Со своим ковриком тоже можно.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Как записаться на занятие?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p data-mosru>Расписание и запись — онлайн через городской сервис mos.ru: выбираете зал,
             занятие и время. Если удобнее — напишите нам в сообщения сообщества,
-            поможем подобрать занятие и записаться.</p>
-        </details>
-        <details name="faq">
-          <summary>Почему занятия проходят в библиотеках?</summary>
-          <p>Мы используем залы культурных центров: это тёплые, просторные и тихие помещения
-            в шаговой доступности — и именно это позволяет держать цены доступными.</p>
-        </details>
-        <details name="faq">
-          <summary>Я инструктор. Сколько стоит аренда зала?</summary>
-          <p>Вы не платите за аренду и инвентарь — формат коворкинга устроен иначе.
-            Напишите в сообщения сообщества, расскажем об условиях сотрудничества.</p>
-        </details>
-        <details name="faq">
-          <summary>Какие документы нужны инструктору?</summary>
-          <p>Профильное образование по йоге, именные сертификаты, опыт групповой работы
-            и статус самозанятого.</p>
-        </details>
-        <details name="faq">
-          <summary>В моём районе нет зала. Появится?</summary>
-          <p>Возможно — залы открываются там, где есть спрос. Напишите нам свой район.</p>
-        </details>
+            поможем подобрать занятие и записаться.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Почему занятия проходят в библиотеках?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p>Мы используем залы культурных центров: это тёплые, просторные и тихие помещения
+            в шаговой доступности — и именно это позволяет держать цены доступными.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Я инструктор. Сколько стоит аренда зала?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p>Вы не платите за аренду и инвентарь — формат коворкинга устроен иначе.
+            Напишите в сообщения сообщества, расскажем об условиях сотрудничества.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Какие документы нужны инструктору?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p>Профильное образование по йоге, именные сертификаты, опыт групповой работы
+            и статус самозанятого.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>В моём районе нет зала. Появится?</span><span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a"><p>Возможно — залы открываются там, где есть спрос. Напишите нам свой район.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. КОНТАКТЫ — ритм C, брендовый блок -->
+  <section class="section section--brand" id="contacts" data-type="C" aria-labelledby="contacts-title">
+    <div class="container">
+      <div class="rail"><span class="rail__num">08 / 08</span><span class="rail__line"></span><span class="rail__name">Контакты</span></div>
+      <div class="contacts-grid">
+        <div>
+          <h2 id="contacts-title">Напишите нам</h2>
+          <p class="lead">Ученику поможем выбрать зал и занятие по уровню, инструктору расскажем
+            об условиях и свободных слотах. Пишем и отвечаем в сообщениях сообщества.</p>
+          <div class="actions">
+            <a class="btn btn--onbrand" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
+            <a class="btn btn--secondary" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
+          </div>
+          <div class="contacts-links">
+            <a class="link" href="https://vk.ru/club241061217" target="_blank" rel="noopener">Сообщество ВКонтакте</a>
+            <span data-mosru>Расписание занятий и запись — в сервисе mos.ru</span>
+          </div>
+        </div>
+        <div class="contacts-card">
+          <h3>В каком районе открыть зал?</h3>
+          <p>Новые залы мы открываем там, где есть спрос. Напишите свой район в сообщения
+            или в комментарии сообщества — это прямо влияет на то, где мы появимся следующими.</p>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- 9. КОНТАКТЫ И ФУТЕР — ритм C, единственный тёмный блок -->
-<footer class="section section--dark" id="contacts" data-type="C" aria-labelledby="contacts-title">
-  <div class="container">
-    <div class="rail"><span class="code">08 / 08</span><span class="rail__name">Контакты</span></div>
-    <div class="contacts__grid">
-      <div>
-        <h2 id="contacts-title">Напишите нам</h2>
-        <p class="lead">Ученику поможем выбрать зал и занятие по уровню, инструктору расскажем
-          об условиях и свободных слотах. Пишем и отвечаем в сообщениях сообщества.</p>
-        <div class="actions">
-          <a class="btn btn--ondark btn--wide" data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
-          <a class="btn btn--secondary btn--wide" data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="link" href="https://vk.ru/club241061217" target="_blank" rel="noopener">Сообщество ВКонтакте</a>
-        </div>
-        <p class="note-after" data-mosru>Расписание занятий и запись — в сервисе mos.ru</p>
-      </div>
-      <div class="contacts__aside">
-        <h3>В каком районе открыть зал?</h3>
-        <p>Новые залы мы открываем там, где есть спрос. Напишите свой район в сообщения
-          или в комментарии сообщества — это прямо влияет на то, где мы появимся следующими.</p>
-      </div>
-    </div>
-    <div class="footer">
-      <img class="footer__logo" src="./photos/logo.png" width="402" height="462" loading="lazy" decoding="async"
+<footer class="footer" id="footer">
+  <div class="footer__in container">
+    <div class="footer__brand">
+      <img class="footer__logo" src="./photos/logo.png" width="464" height="464" loading="lazy" decoding="async"
            alt="Логотип «Йога Коворкинг»: фигура в позе лотоса в круге из букв">
       <div class="footer__legal">
-        <p data-bind="ip">ИП Морозова Наталья Геннадьевна · ИНН 741509809859</p>
-        <p>© 2026 Йога Коворкинг · Йога-залы на базе библиотек юга Москвы</p>
+        <div data-bind="ip">ИП Морозова Наталья Геннадьевна · ИНН 741509809859</div>
+        <div class="copyright">© 2026 Йога Коворкинг · Йога-залы на базе библиотек юга Москвы</div>
       </div>
+    </div>
+    <div class="footer__links">
+      <a data-cta="vk" href="https://vk.ru/im?sel=-241061217" target="_blank" rel="noopener">Написать в ВК</a>
+      <a data-cta="tg" href="https://t.me/natalimorozova7sky" target="_blank" rel="noopener">Telegram</a>
     </div>
   </div>
 </footer>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Йога-коворкинг в Москве — залы для практики и преподавания</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAF8F5; color: #241F2B; font-family: 'Golos Text', system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+  * { box-sizing: border-box; }
+  a { color: #8A6AA4; text-decoration: none; }
+  a:hover { color: #3A2352; }
+  h1, h2, h3 { margin: 0; font-optical-sizing: auto; font-family: Literata, Georgia, serif; font-weight: 500; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  section[id] { scroll-margin-top: 88px; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(250,248,245,0.82);backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid rgba(36,31,43,0.08)">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px);height:72px;display:flex;align-items:center;gap:32px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;color:#241F2B;flex:none">
+        <img src="photos/logo.png" alt="Йога Коворкинг" style="width:44px;height:44px;object-fit:contain" />
+        <span style="font-family:Literata,serif;font-size:17px;letter-spacing:0.01em;line-height:1.1">Йога<span style="color:#8A6AA4">&#8239;коворкинг</span></span>
+      </a>
+      <nav style="margin-left:auto;display:flex;align-items:center;gap:28px;font-size:14px;color:#57505C">
+        <a href="#students" style="color:inherit" style-hover="color:#8A6AA4">Ученикам</a>
+        <a href="#teachers" style="color:inherit" style-hover="color:#8A6AA4">Инструкторам</a>
+        <a href="#halls" style="color:inherit" style-hover="color:#8A6AA4">Залы</a>
+        <a href="#faq" style="color:inherit" style-hover="color:#8A6AA4">Вопросы</a>
+      </nav>
+      <a href="https://vk.ru/im?sel=-241061217" style="flex:none;background:#8A6AA4;color:#fff;font-size:14px;font-weight:500;padding:11px 20px;border-radius:2px;white-space:nowrap;letter-spacing:0.01em;transition:background .2s" style-hover="background:#5C3B6E;color:#fff">Написать в ВК</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section style="position:relative;min-height:min(90vh,840px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#341831">
+      <img src="https://xenaja.github.io/yoga-coworking-landing/photos/hero/hero.jpg" alt="Женщина лежит в шавасане на коврике посреди светлого зала; вдоль стен ряды стульев, за окнами зелень" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 45%;filter:saturate(0.55) contrast(1.06) brightness(0.92)" />
+      <div style="position:absolute;inset:0;background:linear-gradient(103deg,rgba(46,20,44,0.94) 0%,rgba(52,24,49,0.8) 38%,rgba(52,24,49,0.34) 72%,rgba(74,36,80,0.42) 100%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,20,44,0.5) 0%,rgba(46,20,44,0) 30%,rgba(30,12,28,0.62) 100%)"></div>
+
+      <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding:clamp(120px,16vw,180px) clamp(20px,4vw,32px) clamp(40px,5vw,56px)">
+        <div style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,239,243,0.62)">
+          <span style="color:#D6B6DF;font-weight:600">7 залов</span>
+          <span style="width:28px;height:1px;background:rgba(245,239,243,0.35)"></span>
+          <span>Чертаново · Братеево · Зябликово · Садовники</span>
+        </div>
+
+        <h1 style="margin-top:clamp(20px,2.4vw,30px);font-size:clamp(33px,6.4vw,88px);line-height:0.98;letter-spacing:-0.03em;font-weight:500;color:#fff;text-shadow:0 2px 40px rgba(30,12,28,0.35)"><span style="white-space:nowrap">Йога-коворкинг</span><br /><span style="font-style:italic;color:#E3C8EA">в вашем районе</span></h1>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);align-items:flex-end;margin-top:clamp(32px,4vw,52px)">
+          <div style="flex:1 1 420px;max-width:620px">
+            <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(245,239,243,0.88);max-width:46ch">Просторные залы на базе библиотек юга Москвы — для тех, кто практикует, и для тех, кто преподаёт. Йога должна быть доступна.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px">
+              <a href="https://vk.ru/im?sel=-241061217" style="background:#fff;color:#341831;font-size:15px;font-weight:500;padding:15px 28px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:background .2s,color .2s" style-hover="background:#E3C8EA;color:#341831">Написать в ВК</a>
+              <a href="https://t.me/natalimorozova7sky" style="border:1px solid rgba(245,239,243,0.45);color:#F5EFF3;font-size:15px;font-weight:500;padding:14px 26px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:border-color .2s,color .2s;backdrop-filter:blur(4px)" style-hover="border-color:#E3C8EA;color:#E3C8EA">Написать в Telegram</a>
+            </div>
+            <p style="margin-top:16px;font-size:14px;color:rgba(245,239,243,0.6)">Расписание занятий и запись — в сервисе mos.ru</p>
+          </div>
+          <div style="flex:0 1 300px;border-left:1px solid rgba(245,239,243,0.28);padding:4px 0 4px 24px">
+            <p style="font-family:Literata,serif;font-style:italic;font-size:clamp(17px,1.7vw,22px);line-height:1.35;color:#F5EFF3">Так выглядит зал: тихо, просторно, без суеты фитнес-клуба.</p>
+            <p style="margin-top:14px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,239,243,0.55)">Коврики и инвентарь — в зале</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;padding:0 clamp(20px,4vw,32px)">
+      <div style="max-width:1200px;margin:0 auto">
+        <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:0;margin-top:0;border-bottom:1px solid rgba(36,31,43,0.1)">
+          <li style="padding:44px 32px 44px 0;border-right:1px solid rgba(36,31,43,0.1)">
+            <div style="font-family:Literata,serif;font-size:clamp(40px,5vw,64px);line-height:1;color:#8A6AA4;letter-spacing:-0.03em">7</div>
+            <div style="margin-top:12px;font-size:15px;color:#57505C">залов на юге Москвы</div>
+          </li>
+          <li style="padding:44px 32px;border-right:1px solid rgba(36,31,43,0.1)">
+            <div style="font-family:Literata,serif;font-size:clamp(40px,5vw,64px);line-height:1;color:#8A6AA4;letter-spacing:-0.03em">6</div>
+            <div style="margin-top:12px;font-size:15px;color:#57505C">районов: Чертаново, Братеево, Зябликово, Садовники</div>
+          </li>
+          <li style="padding:44px 0 44px 32px">
+            <div style="font-family:Literata,serif;font-size:clamp(40px,5vw,64px);line-height:1;color:#8A6AA4;letter-spacing:-0.03em">0 ₽</div>
+            <div style="margin-top:12px;font-size:15px;color:#57505C">оплата за аренду и инвентарь для инструктора</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" style="padding:clamp(72px,9vw,120px) 0">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8093">
+          <span style="font-variant-numeric:tabular-nums">01 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(36,31,43,0.12)"></span>
+          <span>Что это</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,4vw,64px);margin-top:44px;align-items:start">
+          <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em">Пространство для практики — в паре шагов от дома</h2>
+          <p style="font-size:17px;line-height:1.7;color:#57505C">Йога Коворкинг — сеть доступных йога-залов на базе городских библиотек юга Москвы: Чертаново, Братеево, Зябликово и Садовники. Ученики занимаются рядом с домом по доступным ценам и записываются онлайн через сервис mos.ru, инструкторы ведут группы в оборудованных залах без затрат на аренду.</p>
+        </div>
+        <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px;margin-top:72px">
+          <li style="background:#fff;border:1px solid rgba(36,31,43,0.09);border-radius:3px;padding:36px 32px 40px;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(138,106,164,0.45);transform:translateY(-3px)">
+            <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#7A5F80;font-weight:600">Библиотеки</div>
+            <h3 style="margin-top:22px;font-size:23px;line-height:1.25">Залы в библиотеках</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.65;color:#57505C">Тёплые, просторные и тихие залы культурных центров — без суеты фитнес-клубов.</p>
+          </li>
+          <li style="background:#fff;border:1px solid rgba(36,31,43,0.09);border-radius:3px;padding:36px 32px 40px;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(138,106,164,0.45);transform:translateY(-3px)">
+            <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#7A5F80;font-weight:600">Юг Москвы</div>
+            <h3 style="margin-top:22px;font-size:23px;line-height:1.25">Семь площадок рядом</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.65;color:#57505C">Чертаново, Братеево, Зябликово, Садовники. Список залов растёт.</p>
+          </li>
+          <li style="background:#fff;border:1px solid rgba(36,31,43,0.09);border-radius:3px;padding:36px 32px 40px;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(138,106,164,0.45);transform:translateY(-3px)">
+            <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#7A5F80;font-weight:600">Доступно</div>
+            <h3 style="margin-top:22px;font-size:23px;line-height:1.25">Честная стоимость</h3>
+            <p style="margin-top:14px;font-size:15px;line-height:1.65;color:#57505C">Доступные цены для учеников и работа без аренды для инструкторов.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="students" style="padding:24px 0 clamp(72px,9vw,120px)">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8093">
+          <span style="font-variant-numeric:tabular-nums">02 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(36,31,43,0.12)"></span>
+          <span>Ученикам</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(36px,5vw,72px);margin-top:44px;align-items:start">
+          <div>
+            <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em">Если вы <span style="font-style:italic;color:#8A6AA4">занимаетесь</span> йогой</h2>
+            <ul style="margin-top:44px;border-top:1px solid rgba(36,31,43,0.12)">
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:24px;padding:26px 0;border-bottom:1px solid rgba(36,31,43,0.12)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#A595A8;padding-top:4px;font-variant-numeric:tabular-nums">01</span>
+                <div>
+                  <h3 style="font-size:20px;line-height:1.3">Зал рядом с домом</h3>
+                  <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#57505C">С ковриками и инвентарём — приходить можно налегке.</p>
+                </div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:24px;padding:26px 0;border-bottom:1px solid rgba(36,31,43,0.12)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#A595A8;padding-top:4px;font-variant-numeric:tabular-nums">02</span>
+                <div>
+                  <h3 style="font-size:20px;line-height:1.3">Профессиональные инструкторы</h3>
+                  <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#57505C">Преподаватели с профильным образованием и именными сертификатами.</p>
+                </div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:24px;padding:26px 0;border-bottom:1px solid rgba(36,31,43,0.12)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#A595A8;padding-top:4px;font-variant-numeric:tabular-nums">03</span>
+                <div>
+                  <h3 style="font-size:20px;line-height:1.3">Доступные цены</h3>
+                  <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#57505C">Формат коворкинга позволяет держать стоимость ниже студийной.</p>
+                </div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:24px;padding:26px 0;border-bottom:1px solid rgba(36,31,43,0.12)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#A595A8;padding-top:4px;font-variant-numeric:tabular-nums">04</span>
+                <div>
+                  <h3 style="font-size:20px;line-height:1.3">Удобная запись онлайн</h3>
+                  <p style="margin-top:8px;font-size:15px;line-height:1.6;color:#57505C">Расписание и запись — через городской сервис mos.ru.</p>
+                </div>
+              </li>
+            </ul>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:36px">
+              <a href="https://vk.ru/im?sel=-241061217" style="background:#8A6AA4;color:#fff;font-size:15px;font-weight:500;padding:14px 26px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:background .2s" style-hover="background:#5C3B6E;color:#fff">Написать в ВК</a>
+              <a href="https://t.me/natalimorozova7sky" style="border:1px solid rgba(36,31,43,0.22);color:#241F2B;font-size:15px;font-weight:500;padding:13px 24px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:border-color .2s,color .2s" style-hover="border-color:#8A6AA4;color:#8A6AA4">Написать в Telegram</a>
+              <span style="font-size:14px;color:#8C8093">Поможем выбрать зал и занятие по уровню.</span>
+            </div>
+          </div>
+          <div style="position:sticky;top:104px;overflow:hidden;border-radius:3px;background:#EDE7E0">
+            <img src="https://xenaja.github.io/yoga-coworking-landing/photos/practice/practice.jpg" alt="Женщина разминается в зале, на полу разложены коврики, рядом ряд стульев и зеркальная стена" style="display:block;width:100%;height:clamp(360px,46vw,620px);object-fit:cover;filter:saturate(0.82) contrast(1.04)" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teachers" style="background:#341831;color:#F5EFF3;padding:clamp(72px,9vw,120px) 0">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,239,243,0.5)">
+          <span style="font-variant-numeric:tabular-nums">03 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(245,239,243,0.2)"></span>
+          <span>Инструкторам</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,4vw,64px);margin-top:44px;align-items:start">
+          <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em;color:#fff">Если вы <span style="font-style:italic;color:#D6B6DF">преподаёте</span></h2>
+          <p style="font-size:17px;line-height:1.7;color:rgba(245,239,243,0.78)">Аренда съедает доход, а группу приходится собирать своими силами? В коворкинге зал, инвентарь и организация — на нас.</p>
+        </div>
+        <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 clamp(24px,4vw,64px);margin-top:64px;border-top:1px solid rgba(245,239,243,0.16)">
+          <li style="padding:26px 0;border-bottom:1px solid rgba(245,239,243,0.16)">
+            <h3 style="font-size:20px;line-height:1.3;color:#fff">Оборудованный зал без аренды</h3>
+            <p style="margin-top:8px;font-size:15px;line-height:1.6;color:rgba(245,239,243,0.62)">Не нужно вкладываться в помещение и инвентарь.</p>
+          </li>
+          <li style="padding:26px 0;border-bottom:1px solid rgba(245,239,243,0.16)">
+            <h3 style="font-size:20px;line-height:1.3;color:#fff">Гибкий график</h3>
+            <p style="margin-top:8px;font-size:15px;line-height:1.6;color:rgba(245,239,243,0.62)">Выбирайте удобные локации и время, масштабируйте доход.</p>
+          </li>
+          <li style="padding:26px 0;border-bottom:1px solid rgba(245,239,243,0.16)">
+            <h3 style="font-size:20px;line-height:1.3;color:#fff">Администрирование на нас</h3>
+            <p style="margin-top:8px;font-size:15px;line-height:1.6;color:rgba(245,239,243,0.62)">Организационные вопросы берёт на себя команда.</p>
+          </li>
+          <li style="padding:26px 0;border-bottom:1px solid rgba(245,239,243,0.16)">
+            <h3 style="font-size:20px;line-height:1.3;color:#fff">Реклама и аудитория</h3>
+            <p style="margin-top:8px;font-size:15px;line-height:1.6;color:rgba(245,239,243,0.62)">Помогаем собирать группы из жителей района.</p>
+          </li>
+          <li style="padding:26px 0;border-bottom:1px solid rgba(245,239,243,0.16)">
+            <h3 style="font-size:20px;line-height:1.3;color:#fff">Официально и спокойно</h3>
+            <p style="margin-top:8px;font-size:15px;line-height:1.6;color:rgba(245,239,243,0.62)">Прозрачный формат работы для самозанятых.</p>
+          </li>
+          <li style="padding:26px 0;border-bottom:1px solid rgba(245,239,243,0.16);display:flex;align-items:center">
+            <p style="font-family:Literata,serif;font-style:italic;font-size:19px;line-height:1.45;color:#D6B6DF">Рядом — сообщество практикующих преподавателей: обмен опытом и профессиональный рост.</p>
+          </li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:48px">
+          <a href="https://vk.ru/im?sel=-241061217" style="background:#fff;color:#341831;font-size:15px;font-weight:500;padding:14px 26px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:background .2s,color .2s" style-hover="background:#D6B6DF;color:#341831">Написать в ВК</a>
+          <a href="https://t.me/natalimorozova7sky" style="border:1px solid rgba(245,239,243,0.38);color:#F5EFF3;font-size:15px;font-weight:500;padding:13px 24px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:border-color .2s,color .2s" style-hover="border-color:#D6B6DF;color:#D6B6DF">Написать в Telegram</a>
+          <span style="font-size:14px;color:rgba(245,239,243,0.55)">Расскажем об условиях и свободных слотах в залах.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="requirements" style="padding:clamp(72px,9vw,120px) 0">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8093">
+          <span style="font-variant-numeric:tabular-nums">04 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(36,31,43,0.12)"></span>
+          <span>Требования</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,4vw,64px);margin-top:44px;align-items:start">
+          <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em">Кого мы ждём в команде</h2>
+          <p style="font-size:17px;line-height:1.7;color:#57505C">Мы отвечаем перед учениками за качество практики, поэтому у нас несколько обязательных условий.</p>
+        </div>
+        <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px;margin-top:64px">
+          <li style="background:#F3EFE9;border-radius:3px;padding:32px 28px 36px;border-top:2px solid #8A6AA4">
+            <div style="font-family:Literata,serif;font-size:15px;color:#8A6AA4;font-variant-numeric:tabular-nums">01</div>
+            <h3 style="margin-top:20px;font-size:21px;line-height:1.25">Образование по йоге</h3>
+            <p style="margin-top:12px;font-size:15px;line-height:1.6;color:#57505C">Профильное обучение по направлению, которое вы ведёте.</p>
+          </li>
+          <li style="background:#F3EFE9;border-radius:3px;padding:32px 28px 36px;border-top:2px solid #8A6AA4">
+            <div style="font-family:Literata,serif;font-size:15px;color:#8A6AA4;font-variant-numeric:tabular-nums">02</div>
+            <h3 style="margin-top:20px;font-size:21px;line-height:1.25">Именные сертификаты</h3>
+            <p style="margin-top:12px;font-size:15px;line-height:1.6;color:#57505C">Документы, подтверждающие квалификацию.</p>
+          </li>
+          <li style="background:#F3EFE9;border-radius:3px;padding:32px 28px 36px;border-top:2px solid #8A6AA4">
+            <div style="font-family:Literata,serif;font-size:15px;color:#8A6AA4;font-variant-numeric:tabular-nums">03</div>
+            <h3 style="margin-top:20px;font-size:21px;line-height:1.25">Опыт работы с группами</h3>
+            <p style="margin-top:12px;font-size:15px;line-height:1.6;color:#57505C">Вы уже вели групповые занятия, а не только индивидуальные.</p>
+          </li>
+          <li style="background:#F3EFE9;border-radius:3px;padding:32px 28px 36px;border-top:2px solid #8A6AA4">
+            <div style="font-family:Literata,serif;font-size:15px;color:#8A6AA4;font-variant-numeric:tabular-nums">04</div>
+            <h3 style="margin-top:20px;font-size:21px;line-height:1.25">Статус самозанятого</h3>
+            <p style="margin-top:12px;font-size:15px;line-height:1.6;color:#57505C">Работаем официально — статус должен быть действующим.</p>
+          </li>
+          <li style="background:#F3EFE9;border-radius:3px;padding:32px 28px 36px;border-top:2px solid #8A6AA4">
+            <div style="font-family:Literata,serif;font-size:15px;color:#8A6AA4;font-variant-numeric:tabular-nums">05</div>
+            <h3 style="margin-top:20px;font-size:21px;line-height:1.25">Время и желание</h3>
+            <p style="margin-top:12px;font-size:15px;line-height:1.6;color:#57505C">Свободные часы в расписании и готовность вести регулярно.</p>
+          </li>
+          <li style="display:flex;flex-direction:column;justify-content:center;padding:32px 28px 36px;border:1px dashed rgba(138,106,164,0.4);border-radius:3px">
+            <p style="font-size:16px;line-height:1.6;color:#54305F">Подходит? Напишите нам <a href="https://vk.ru/im?sel=-241061217" style="border-bottom:1px solid rgba(138,106,164,0.4)">в ВК</a> или <a href="https://t.me/natalimorozova7sky" style="border-bottom:1px solid rgba(138,106,164,0.4)">в Telegram</a> — расскажем о свободных слотах в залах.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="halls" style="padding:24px 0 clamp(72px,9vw,120px)">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8093">
+          <span style="font-variant-numeric:tabular-nums">05 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(36,31,43,0.12)"></span>
+          <span>Наши залы</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,4vw,64px);margin-top:44px;align-items:start">
+          <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em">Семь залов на юге Москвы</h2>
+          <p style="font-size:17px;line-height:1.7;color:#57505C">Занятия проходят в залах городских библиотек и культурных центров: просторно, тихо и в шаговой доступности от дома.</p>
+        </div>
+      </div>
+
+      <ul style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,1fr);gap:12px;margin-top:56px;padding:0 clamp(20px,4vw,32px) 12px;overflow-x:auto;scroll-snap-type:x mandatory">
+        <li style="scroll-snap-align:center;overflow:hidden;border-radius:3px;background:#EDE7E0"><img src="https://xenaja.github.io/yoga-coworking-landing/photos/halls/hall-01.jpg" alt="Зал с книжными стеллажами и рядами белых стульев, в центре свободное пространство" style="display:block;width:100%;height:300px;object-fit:cover;filter:saturate(0.8) contrast(1.04)" /></li>
+        <li style="scroll-snap-align:center;overflow:hidden;border-radius:3px;background:#EDE7E0"><img src="https://xenaja.github.io/yoga-coworking-landing/photos/halls/hall-02.jpg" alt="Просторный светлый зал библиотеки: стеллажи с книгами, кресло и свободный центр" style="display:block;width:100%;height:300px;object-fit:cover;filter:saturate(0.8) contrast(1.04)" /></li>
+        <li style="scroll-snap-align:center;overflow:hidden;border-radius:3px;background:#EDE7E0"><img src="https://xenaja.github.io/yoga-coworking-landing/photos/halls/hall-03.jpg" alt="Зал с деревянным реечным потолком, большими окнами и светлым полом" style="display:block;width:100%;height:300px;object-fit:cover;filter:saturate(0.8) contrast(1.04)" /></li>
+        <li style="scroll-snap-align:center;overflow:hidden;border-radius:3px;background:#EDE7E0"><img src="https://xenaja.github.io/yoga-coworking-landing/photos/halls/hall-04.jpg" alt="Светлый зал с панорамными окнами, картинами на стене и стульями вдоль стекла" style="display:block;width:100%;height:300px;object-fit:cover;filter:saturate(0.8) contrast(1.04)" /></li>
+        <li style="scroll-snap-align:center;overflow:hidden;border-radius:3px;background:#EDE7E0"><img src="https://xenaja.github.io/yoga-coworking-landing/photos/halls/hall-05.jpg" alt="Читальный зал: стеллажи с книгами, экран и стулья по периметру" style="display:block;width:100%;height:300px;object-fit:cover;filter:saturate(0.8) contrast(1.04)" /></li>
+        <li style="scroll-snap-align:center;overflow:hidden;border-radius:3px;background:#EDE7E0"><img src="https://xenaja.github.io/yoga-coworking-landing/photos/halls/hall-06.jpg" alt="Пустой зал с паркетным полом и рядом высоких окон под потолком" style="display:block;width:100%;height:300px;object-fit:cover;filter:saturate(0.8) contrast(1.04)" /></li>
+      </ul>
+
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <p style="margin-top:16px;font-size:13px;color:#8C8093">Кадры из залов сети: библиотеки и культурные центры юга Москвы.</p>
+
+        <ul style="margin-top:56px;border-top:1px solid rgba(36,31,43,0.14)">
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 143</span>
+            <span style="font-size:17px;flex:1 1 210px">Детская библиотека № 143</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Южное Чертаново · м. Академия Янгеля</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">ул. Чертановская, 66к4</span>
+          </li>
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 150</span>
+            <span style="font-size:17px;flex:1 1 210px">Библиотека № 150</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Братеево · м. Борисово</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">ул. Борисовские Пруды, 10к5</span>
+          </li>
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 151·1</span>
+            <span style="font-size:17px;flex:1 1 210px">Библиотека № 151, площадка 1</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Северное Чертаново · м. Чертановская</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">мкр. Северное Чертаново, 2к207</span>
+          </li>
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 151·2</span>
+            <span style="font-size:17px;flex:1 1 210px">Библиотека № 151, площадка 2</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Северное Чертаново · м. Чертановская</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">ул. Чертановская, 27к2</span>
+          </li>
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 155</span>
+            <span style="font-size:17px;flex:1 1 210px">Библиотека № 155</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Зябликово · м. Зябликово</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">Гурьевский проезд, 15к2с2</span>
+          </li>
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 158</span>
+            <span style="font-size:17px;flex:1 1 210px">Детская библиотека № 158</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Центральное Чертаново · м. Пражская</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">ул. Дорожная, 20к1</span>
+          </li>
+          <li style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(36,31,43,0.1);transition:background .2s" style-hover="background:#F3EFE9">
+            <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;font-variant-numeric:tabular-nums;flex:0 0 72px">№ 159</span>
+            <span style="font-size:17px;flex:1 1 210px">Библиотека № 159</span>
+            <span style="font-size:15px;color:#57505C;flex:1 1 200px">Садовники · м. Нагатинская</span>
+            <span style="font-size:15px;color:#8C8093;flex:1 1 180px">ул. Нагатинская, 11к1</span>
+          </li>
+        </ul>
+        <p style="margin-top:28px;font-size:16px;line-height:1.6;color:#57505C;max-width:60ch">Живёте в другом районе? Напишите нам — новые залы открываем там, где есть спрос.</p>
+      </div>
+    </section>
+
+    <section id="start" style="padding:0 0 clamp(72px,9vw,120px)">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8093">
+          <span style="font-variant-numeric:tabular-nums">06 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(36,31,43,0.12)"></span>
+          <span>Как начать</span>
+        </div>
+        <h2 style="margin-top:44px;font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em">С чего начать</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:56px">
+          <div style="background:#fff;border:1px solid rgba(36,31,43,0.09);border-radius:3px;padding:40px 36px 44px">
+            <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#7A5F80;font-weight:600">Ученику</div>
+            <h3 style="margin-top:18px;font-size:25px;line-height:1.2">Три шага до первого занятия</h3>
+            <ol style="margin-top:32px">
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(36,31,43,0.1)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;padding-top:3px;font-variant-numeric:tabular-nums">01</span>
+                <div><div style="font-size:17px;font-weight:500">Выберите зал рядом с домом</div><p style="margin-top:6px;font-size:15px;line-height:1.6;color:#57505C">Семь адресов на юге Москвы — список выше.</p></div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(36,31,43,0.1)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;padding-top:3px;font-variant-numeric:tabular-nums">02</span>
+                <div><div style="font-size:17px;font-weight:500">Найдите занятие в расписании</div><p style="margin-top:6px;font-size:15px;line-height:1.6;color:#57505C">Расписание — в сервисе mos.ru. Или напишите нам, поможем выбрать.</p></div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(36,31,43,0.1)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;padding-top:3px;font-variant-numeric:tabular-nums">03</span>
+                <div><div style="font-size:17px;font-weight:500">Запишитесь и приходите</div><p style="margin-top:6px;font-size:15px;line-height:1.6;color:#57505C">Коврик уже ждёт — приходить можно налегке.</p></div>
+              </li>
+            </ol>
+          </div>
+          <div style="background:#fff;border:1px solid rgba(36,31,43,0.09);border-radius:3px;padding:40px 36px 44px">
+            <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#7A5F80;font-weight:600">Инструктору</div>
+            <h3 style="margin-top:18px;font-size:25px;line-height:1.2">Три шага до своей группы</h3>
+            <ol style="margin-top:32px">
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(36,31,43,0.1)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;padding-top:3px;font-variant-numeric:tabular-nums">01</span>
+                <div><div style="font-size:17px;font-weight:500">Напишите в сообщения сообщества</div><p style="margin-top:6px;font-size:15px;line-height:1.6;color:#57505C">Коротко о себе и о том, что преподаёте.</p></div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(36,31,43,0.1)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;padding-top:3px;font-variant-numeric:tabular-nums">02</span>
+                <div><div style="font-size:17px;font-weight:500">Пришлите сертификаты</div><p style="margin-top:6px;font-size:15px;line-height:1.6;color:#57505C">И расскажите об опыте работы с группами.</p></div>
+              </li>
+              <li style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(36,31,43,0.1)">
+                <span style="font-family:Literata,serif;font-size:14px;color:#8A6AA4;padding-top:3px;font-variant-numeric:tabular-nums">03</span>
+                <div><div style="font-size:17px;font-weight:500">Согласуйте зал и график</div><p style="margin-top:6px;font-size:15px;line-height:1.6;color:#57505C">И ведите группы в оборудованном зале.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="padding:0 0 clamp(72px,9vw,120px)">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8093">
+          <span style="font-variant-numeric:tabular-nums">07 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(36,31,43,0.12)"></span>
+          <span>Вопросы</span>
+        </div>
+        <h2 style="margin-top:44px;font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-0.02em">Частые вопросы</h2>
+        <ul style="margin-top:48px;border-top:1px solid rgba(36,31,43,0.14);max-width:960px">
+          <sc-for list="{{ faq }}" as="item" hint-placeholder-count="7">
+            <li style="border-bottom:1px solid rgba(36,31,43,0.12)">
+              <button type="button" onClick="{{ item.toggle }}" style="{{ item.btnStyle }}" style-hover="color:#8A6AA4">
+                <span style="font-family:Literata,serif;font-size:clamp(18px,2vw,22px);line-height:1.35;font-weight:500;padding-right:24px">{{ item.q }}</span>
+                <span style="{{ item.iconStyle }}">+</span>
+              </button>
+              <div style="{{ item.bodyStyle }}">
+                <p style="font-size:16px;line-height:1.7;color:#57505C;max-width:70ch;padding-bottom:28px">{{ item.a }}</p>
+              </div>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacts" style="background:#4A2450;color:#F5EFF3;padding:clamp(72px,9vw,120px) 0 96px">
+      <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,239,243,0.5)">
+          <span style="font-variant-numeric:tabular-nums">08 / 08</span>
+          <span style="flex:1;height:1px;background:rgba(245,239,243,0.2)"></span>
+          <span>Контакты</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,72px);margin-top:48px;align-items:start">
+          <div>
+            <h2 style="font-size:clamp(34px,4.6vw,60px);line-height:1.05;letter-spacing:-0.025em;color:#fff">Напишите нам</h2>
+            <p style="margin-top:24px;font-size:17px;line-height:1.7;color:rgba(245,239,243,0.78);max-width:52ch">Ученику поможем выбрать зал и занятие по уровню, инструктору расскажем об условиях и свободных слотах. Пишем и отвечаем в сообщениях сообщества.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:36px">
+              <a href="https://vk.ru/im?sel=-241061217" style="background:#fff;color:#54305F;font-size:15px;font-weight:500;padding:15px 28px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:background .2s" style-hover="background:#D6B6DF;color:#54305F">Написать в ВК</a>
+              <a href="https://t.me/natalimorozova7sky" style="border:1px solid rgba(245,239,243,0.38);color:#F5EFF3;font-size:15px;font-weight:500;padding:14px 26px;border-radius:2px;white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:220px;;transition:border-color .2s,color .2s" style-hover="border-color:#D6B6DF;color:#D6B6DF">Написать в Telegram</a>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:32px;font-size:15px">
+              <a href="https://vk.ru/club241061217" style="color:#D6B6DF;border-bottom:1px solid rgba(214,182,223,0.4)" style-hover="color:#fff">Сообщество ВКонтакте</a>
+              <span style="color:rgba(245,239,243,0.55)">Расписание занятий и запись — в сервисе mos.ru</span>
+            </div>
+          </div>
+          <div style="border:1px solid rgba(245,239,243,0.2);border-radius:3px;padding:36px 32px 40px;background:rgba(255,255,255,0.03)">
+            <h3 style="font-size:24px;line-height:1.25;color:#fff">В каком районе открыть зал?</h3>
+            <p style="margin-top:16px;font-size:15px;line-height:1.7;color:rgba(245,239,243,0.72)">Новые залы мы открываем там, где есть спрос. Напишите свой район в сообщения или в комментарии сообщества — это прямо влияет на то, где мы появимся следующими.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background:#341831;color:rgba(245,239,243,0.6);padding:44px 0 56px;border-top:1px solid rgba(245,239,243,0.12)">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:20px">
+        <img src="photos/logo.png" alt="Логотип «Йога Коворкинг»: фигура в позе лотоса в круге из букв" style="width:80px;height:80px;object-fit:contain;background:#FAF8F5;border-radius:50%;padding:9px" />
+        <div style="font-size:14px;line-height:1.7">
+          <div>ИП Морозова Наталья Геннадьевна · ИНН 741509809859</div>
+          <div style="color:rgba(245,239,243,0.42)">© 2026 Йога Коворкинг · Йога-залы на базе библиотек юга Москвы</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:24px;font-size:14px">
+        <a href="https://vk.ru/im?sel=-241061217" style="color:#D6B6DF" style-hover="color:#fff">Написать в ВК</a>
+        <a href="https://t.me/natalimorozova7sky" style="color:#D6B6DF" style-hover="color:#fff">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const FAQ = [
+  ["Я никогда не занимался йогой — мне подойдёт?", "Да. В расписании есть занятия для начинающих, инструктор подскажет и поможет с первых минут. Уровень группы указан в описании занятия."],
+  ["Нужен ли свой коврик?", "Нет, залы оборудованы инвентарём. Со своим ковриком тоже можно."],
+  ["Как записаться на занятие?", "Расписание и запись — онлайн через городской сервис mos.ru: выбираете зал, занятие и время. Если удобнее — напишите нам в сообщения сообщества, поможем подобрать занятие и записаться."],
+  ["Почему занятия проходят в библиотеках?", "Мы используем залы культурных центров: это тёплые, просторные и тихие помещения в шаговой доступности — и именно это позволяет держать цены доступными."],
+  ["Я инструктор. Сколько стоит аренда зала?", "Вы не платите за аренду и инвентарь — формат коворкинга устроен иначе. Напишите в сообщения сообщества, расскажем об условиях сотрудничества."],
+  ["Какие документы нужны инструктору?", "Профильное образование по йоге, именные сертификаты, опыт групповой работы и статус самозанятого."],
+  ["В моём районе нет зала. Появится?", "Возможно — залы открываются там, где есть спрос. Напишите нам свой район."]
+];
+
+class Component extends DCLogic {
+  state = { open: 0 };
+
+  renderVals() {
+    const open = this.state.open;
+    return {
+      faq: FAQ.map(([q, a], i) => ({
+        q, a,
+        toggle: () => this.setState({ open: open === i ? -1 : i }),
+        btnStyle: "width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-width:0;text-align:left;background:none;border:0;padding:26px 0;cursor:pointer;color:" + (open === i ? "#8A6AA4" : "#241F2B") + ";font-family:inherit;transition:color .2s",
+        iconStyle: "flex:none;font-size:22px;line-height:1;color:#A595A8;transform:rotate(" + (open === i ? "45deg" : "0deg") + ");transition:transform .25s",
+        bodyStyle: "overflow:hidden;transition:max-height .35s ease,opacity .25s;max-height:" + (open === i ? "320px" : "0px") + ";opacity:" + (open === i ? "1" : "0")
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
