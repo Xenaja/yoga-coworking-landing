@@ -23,18 +23,34 @@ SITE_URL="${SITE_URL%/}"   # без завершающего слэша
 CURRENT=$(sed -n 's|.*rel="canonical" href="\([^"]*\)/".*|\1|p' index.html | head -1)
 [ -z "$CURRENT" ] && CURRENT="{{SITE_URL}}"
 
+HOST=$(echo "$SITE_URL" | sed 's|^https\?://||')
+echo "→ Проверяю, что $HOST реально резолвится, прежде чем что-то менять"
+RESOLVED=""
+if command -v getent >/dev/null 2>&1 && getent hosts "$HOST" >/dev/null 2>&1; then RESOLVED=1; fi
+if [ -z "$RESOLVED" ] && command -v host >/dev/null 2>&1 && host "$HOST" >/dev/null 2>&1; then RESOLVED=1; fi
+if [ -z "$RESOLVED" ] && command -v dig >/dev/null 2>&1 && [ -n "$(dig +short "$HOST" 2>/dev/null)" ]; then RESOLVED=1; fi
+if [ -z "$RESOLVED" ] && command -v nslookup >/dev/null 2>&1 \
+   && nslookup "$HOST" 2>/dev/null | grep -qE 'Address: [0-9]'; then RESOLVED=1; fi
+if [ -z "$RESOLVED" ]; then
+  echo "  ✗ $HOST не резолвится (DNS ещё не разошёлся или не настроен)."
+  echo "  Публикация с нерабочим доменом в canonical/OG хуже, чем noindex. Прервано."
+  exit 1
+fi
+
 echo "→ Подставляю домен: $CURRENT → $SITE_URL"
 for f in index.html robots.txt sitemap.xml; do
   [ -f "$f" ] || continue
   sed -i "s|$CURRENT|$SITE_URL|g" "$f"
 done
-
-echo "→ Снимаю черновой режим"
 sed -i 's| data-env="dev"||' index.html
 sed -i '/name="robots" content="noindex/d' index.html
 
 echo "→ Шлюз"
-sh gate.sh || exit 1
+if ! sh gate.sh; then
+  echo "→ Шлюз не пройден — откатываю подстановку домена и снятие noindex"
+  git checkout -- index.html robots.txt sitemap.xml
+  exit 1
+fi
 
 if git rev-parse --git-dir >/dev/null 2>&1 && git remote | grep -q .; then
   echo "→ Коммит и пуш"
