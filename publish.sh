@@ -30,9 +30,17 @@ if command -v getent >/dev/null 2>&1 && getent hosts "$HOST" >/dev/null 2>&1; th
 if [ -z "$RESOLVED" ] && command -v host >/dev/null 2>&1 && host "$HOST" >/dev/null 2>&1; then RESOLVED=1; fi
 if [ -z "$RESOLVED" ] && command -v dig >/dev/null 2>&1 && [ -n "$(dig +short "$HOST" 2>/dev/null)" ]; then RESOLVED=1; fi
 if [ -z "$RESOLVED" ] && command -v nslookup >/dev/null 2>&1 \
-   && nslookup "$HOST" 2>/dev/null | grep -qE 'Address: [0-9]'; then RESOLVED=1; fi
+   && nslookup "$HOST" 2>/dev/null | grep -qE '[Aa]ddress:?[[:space:]]+[0-9]'; then RESOLVED=1; fi
+# Локальный резолвер может молчать (VPN, корпоративный DNS), а домен при этом работать.
+# Последний довод — сайт отвечает по HTTPS.
+if [ -z "$RESOLVED" ] && command -v curl >/dev/null 2>&1; then
+  CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$HOST/" 2>/dev/null)
+  case "$CODE" in
+    2??|3??) RESOLVED=1; echo "  DNS молчит, но https://$HOST/ отвечает $CODE — домен живой" ;;
+  esac
+fi
 if [ -z "$RESOLVED" ]; then
-  echo "  ✗ $HOST не резолвится (DNS ещё не разошёлся или не настроен)."
+  echo "  ✗ $HOST не резолвится и не отвечает по HTTPS (DNS ещё не разошёлся или не настроен)."
   echo "  Публикация с нерабочим доменом в canonical/OG хуже, чем noindex. Прервано."
   exit 1
 fi

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xenaja.github.io/yoga-coworking-landing/sitemap.xml
+Sitemap: https://yogacoworking.ru/sitemap.xml
