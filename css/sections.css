@@ -96,6 +96,10 @@
   display:block;font:400 clamp(40px,5vw,64px)/1 var(--font-display);
   color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums;
 }
+.stats b .stats__gt{
+  font-size:.52em;font-style:normal;vertical-align:.2em;
+  margin-right:.12em;letter-spacing:0;opacity:.7;
+}
 .stats span{display:block;margin-top:12px;font-size:15px;color:var(--ink-2)}
 @media (min-width:640px){
   .stats{grid-template-columns:repeat(3,1fr)}
