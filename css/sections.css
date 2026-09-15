@@ -231,6 +231,6 @@
 }
 .footer__legal{font-size:14px;line-height:1.7}
 .footer__legal .copyright{color:rgba(245,239,243,.42)}
-.footer__links{display:flex;gap:24px;font-size:14px}
+.footer__links{display:flex;flex-wrap:wrap;gap:16px 24px;font-size:14px}
 .footer__links a{color:var(--lilac-300)}
 .footer__links a:hover{color:#fff}

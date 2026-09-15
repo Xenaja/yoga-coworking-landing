@@ -22,7 +22,7 @@ export function readContent() {
 /** Кнопки мессенджеров: адреса берутся из #content.
  *  В разметке стоят те же адреса — они работают и без JS. */
 function syncMessengerLinks(content) {
-  const map = { vk: content.vk_message, tg: content.telegram };
+  const map = { vk: content.vk_message, tg: content.telegram, max: content.max };
   document.querySelectorAll('a[data-cta]').forEach((a) => {
     const href = map[a.dataset.cta];
     if (href) a.href = href;
@@ -50,7 +50,19 @@ function fillLegal(content) {
   el.removeAttribute('data-pending');
 }
 
+/** Телефон: текст и ссылка tel: собираются из одного значения #content,
+ *  чтобы при смене номера править его в одном месте. */
+function fillPhone(content) {
+  if (!content.phone) return;
+  const href = 'tel:' + content.phone.replace(/[^+\d]/g, '');
+  document.querySelectorAll('[data-bind="phone"]').forEach((el) => {
+    el.textContent = content.phone;
+    el.href = href;
+  });
+}
+
 export function applyContent(content) {
+  fillPhone(content);
   syncMessengerLinks(content);
   linkMosRu(content);
   fillLegal(content);
